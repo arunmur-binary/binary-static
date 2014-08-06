@@ -14659,7 +14659,7 @@ pjax_config_page('rise_fall_table', function() {
     };
 });
 
-pjax_config_page('portfolio|trade.cgi|statement|f_manager_statement|f_manager_history|f_profit_table', function() {
+pjax_config_page('portfolio|trade.cgi|statement|f_manager_statement|f_manager_history|f_profit_table|profit_table', function() {
     return {
         onLoad: function() {
             BetSell.register();
@@ -15393,6 +15393,11 @@ onLoad.queue_for_url(function() {
         $('#submit-date').removeClass('invisible');
     });
 }, 'statement');
+;onLoad.queue_for_url(function() {
+    $('#profit-table-date').on('change', function() {
+        $('#submit-date').removeClass('invisible');
+    });
+}, 'profit_table');
 ;
 var self_exclusion_date_picker = function () {
     // 6 months from now
